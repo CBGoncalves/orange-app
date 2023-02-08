@@ -1,26 +1,52 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template class="template">
+  <NavigationBar />
+  <div class="main">
+    <WelcomeMessage />
+    <StatsWindow />
+  </div>
+  <ProjectWindow />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavigationBar from './components/NavigationBar.vue';
+import WelcomeMessage from './components/WelcomeMessage.vue';
+import ProjectWindow from './components/ProjectsWindow.vue';
+import StatsWindow from './components/StatsWindow.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    NavigationBar,
+    WelcomeMessage,
+    ProjectWindow,
+    StatsWindow
+  },
+  data() {
+    return {
+      name: "Carlos"
+    }
   }
 }
 </script>
 
 <style>
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #282a36;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
 }
 </style>
